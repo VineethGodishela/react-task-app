@@ -3,11 +3,13 @@ import axios from "axios";
 export default function Task() {
   let [mydata, setdata] = useState([]);
   useEffect(() => {
+    //  first axios.get("http://localhost:3000/tasks")
+    //after backend deployment
     axios
-      .get("http://localhost:3000/tasks")
+      .get("https://react-task-app-sxlx.onrender.com/tasks")
       .then((res) => {
         // console.log(res.data);
-        setdata(res.data)
+        setdata(res.data);
       })
       .catch((err) => {
         console.log(err);
